@@ -1,6 +1,6 @@
 (ns clojure-bot.sandbox
   (:require [clojail.core :refer [sandbox]]
-            [clojail.testers :refer [secure-tester-without-def blanket]])
+            [clojail.testers :refer [secure-tester blanket]])
   (:import java.io.StringWriter
            java.util.concurrent.TimeoutException))
 
@@ -8,7 +8,7 @@
 ;; Sandbox declaration
 
 (def clj-telegrambot-tester
-  (conj secure-tester-without-def (blanket "clojure-bot")))
+  (conj secure-tester (blanket "clojure-bot")))
 
 (def sb (sandbox clj-telegrambot-tester))
 
