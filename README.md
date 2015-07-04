@@ -21,6 +21,16 @@ ClojureBot also uses [clojail](https://github.com/Raynes/clojail). From the READ
 
 Then, just `lein run` inside your project folder.
 
+## Limitations
+
+All the clojure code you pass to the bot is evaluated in a sandbox.
+
+This specific implementation disallows the creation of `defs` and all filesystem and network access. Long-running processes will be terminated (issuing a Timeout Exception).
+
+You can override this by changing the tester used in `sandbox.clj`.
+
+Just change the `clj-telegrambot-tester` variable to include your preferred clojail tester.
+
 ## License
 
 Copyright © 2015 Borja de Régil.
