@@ -4,8 +4,7 @@
 (def start-message
   (str "Hello there!\n\n"
        "This is ClojureBot - evaluate your clojure code whenever you go.\n\n"
-       "To get started, type /eval <code> "
-       "to evaluate your <code>"))
+       "To get started, type /eval <code>"))
 
 (def error-message
   (str "I'm sorry, my responses are limited.\n"
