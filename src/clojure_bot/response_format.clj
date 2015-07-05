@@ -1,4 +1,19 @@
-(ns clojure-bot.response-format)
+(ns clojure-bot.response-format
+  (:require [clojure-bot.utils :refer [unixt->utc]]))
+
+;; ============================================
+;; Log formatters
+
+;; {} -> String
+(defn log-format
+  "Defines a log format from a telegram response"
+  [m]
+  (str "=================================\n"
+       "Message Id: " (:message_id m) "\n"
+       "To: @" (get (get m :chat) :username) "\n"
+       "Date: " (unixt->utc (:date m)) "\n"
+       "Text:\n"
+       (get m :text) "\n"))
 
 ;; ============================================
 ;; S-expr evaluation formatters

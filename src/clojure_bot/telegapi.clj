@@ -2,7 +2,8 @@
   (:require [clojure-bot.utils :as ut]
             [environ.core :refer [env]]
             [org.httpkit.client :as http]
-            [clojure-bot.telegapi-util :as tgu]))
+            [clojure-bot.telegapi-util :as tgu]
+            [clojure-bot.response-format :as fmt]))
 
 
 ;; ============================================
@@ -23,8 +24,8 @@
 ;; String ->
 (defn- send-success [response]
   (ut/logger (-> response
-                 tgu/get-result-from-response)))
-
+                 tgu/get-result-from-response
+                 fmt/log-format)))
 
 ;; ============================================
 ;; Telegram API Integration functions

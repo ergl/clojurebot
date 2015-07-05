@@ -13,6 +13,18 @@
   (logger (str "Uh oh! Error: " error)))
 
 
+;; Natural -> String
+(defn unixt->utc
+  "
+   Convert unix time to UTC
+   formatted as yyyy-MM-dd HH:mm:ss
+  "
+  [t]
+  (.format
+    (java.text.SimpleDateFormat. "yyyy-MM-dd HH:mm:ss")
+    (java.util.Date. (* 1000 t))))
+
+
 ;; Turns:
 ;; (tee val fn1 fn2 ...)
 ;; Into:
