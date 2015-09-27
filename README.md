@@ -1,6 +1,6 @@
 # ClojureBot
 
-ClojureBot is a Telegram bot that lets you evaluate your own Clojure expressions, aynwhere, anytime.
+ClojureBot is a Telegram bot that lets you evaluate your own Clojure expressions, anywhere, anytime.
 
 ## Usage
 
